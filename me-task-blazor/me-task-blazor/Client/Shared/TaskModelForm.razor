@@ -1,0 +1,38 @@
+﻿<h3>TaskModelForm</h3>
+@using me_task_blazor.Shared
+ 
+@if (Tasks == null)
+{
+
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Images</th>
+                <th>Res</th>
+                <th>ReleaseDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                @foreach (var t in Tasks)
+                {
+                <td>@t.Id </td>
+                <td>@t.Images</td>
+
+                <td>@t.Res</td>
+                <td>@t.ReleaseDate</td>
+                }
+
+            </tr>
+        </tbody>
+    </table>
+}
+
+@code {
+    private TaskModel[] Tasks;
+}

@@ -1,0 +1,69 @@
+﻿@using me_task_blazor.Shared
+
+<h3>Try to find answer</h3>
+<td>
+    <input @bind="@NewTask.Images" type="text" class="form-control">
+</td>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Person</th>
+            <th scope="col">Speed (img/min)</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @((MarkupString)Rows)
+
+    </tbody>
+
+</table>
+
+<button type="button" class="btn btn-primary" @onclick="AddWorker">&#43; Add</button>
+<div>
+    <button type="button" class="btn btn-primary" @onclick="Get">Answer</button>
+</div>
+
+<div>
+    <br>A job of @NewTask.Images images is going to be edited by a crew of people:<br>
+
+    Every person have speed property v img/min(Worker list)<br>
+
+    Answer:<br>
+    1. How long will this job take in total?<br>
+    - Total time
+
+    2. How many images will be edited by every person?<br>
+    - Worker (name) edit (number of images)
+
+</div>
+
+
+@code {
+    public TaskModel NewTask = new TaskModel();
+
+
+    public double counter = 2;
+    public bool Answer = false;
+
+    private void Get()
+    {
+        Answer = !Answer;
+        
+}
+
+    private string Rows = "<tr>" +
+        "<th scope= \"row\"> 1 </th>" +
+        "<td><input @bind=\"NewTask\" type = \"text\" class=\"form-control\" id=\"name\"></td>" +
+        "<td><input type = \"number\" class=\"form-control\" id=\"speed\"></td></tr>";
+
+    private void AddWorker()
+    {
+        Rows += "<tr>" +
+            "<th scope= \"row\">" + counter++.ToString() + "</th>" +
+            "<td><input @bind=\"NewTask.Name\" type = \"text\" class=\"form-control\" id=\"name\"></td>" +
+            "<td><input type = \"number\" class=\"form-control\" id=\"speed\"></td></tr>";
+    }
+
+}

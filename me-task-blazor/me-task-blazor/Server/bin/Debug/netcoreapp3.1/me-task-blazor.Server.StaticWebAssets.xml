@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\lvarc\source\repos\me-test-task\me-task-blazor\me-task-blazor\Client\bin\Debug\netstandard2.1\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\lvarc\source\repos\me-test-task\me-task-blazor\me-task-blazor\Client\wwwroot\" />
+</StaticWebAssets>

@@ -1,0 +1,27 @@
+﻿@page "/task/"
+@using me_task_blazor.Shared
+@inject HttpClient Http
+
+<h1>Task history</h1>
+
+<p>fetching data from the server.</p>
+@if (Tasks == null)
+{
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+}
+else 
+{
+<TaskModelForm />
+}
+
+@code {
+    private TaskModel[] Tasks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Tasks = await Http.GetFromJsonAsync<TaskModel[]>("TaskModel");
+    }
+
+}

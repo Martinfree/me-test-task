@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\me-task-blazor",
+    "\\me-task-blazor\\Client",
+    "\\me-task-blazor\\Client\\Pages",
+    "\\me-task-blazor\\Client\\Shared",
+    "\\me-task-blazor\\Server",
+    "\\me-task-blazor\\Server\\Controllers",
+    "\\me-task-blazor\\Server\\Models",
+    "\\me-task-blazor\\Shared"
+  ],
+  "SelectedNode": "\\me-task-blazor\\Server\\Controllers\\TaskController.cs",
+  "PreviewInSolutionExplorer": false
+}
