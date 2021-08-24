@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\me-task-blazor.Client.csproj": {}
+    "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\me-task-blazor.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\me-task-blazor.Client.csproj": {
+    "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\me-task-blazor.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\me-task-blazor.Client.csproj",
+        "projectUniqueName": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\me-task-blazor.Client.csproj",
         "projectName": "me-task-blazor.Client",
-        "projectPath": "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\me-task-blazor.Client.csproj",
+        "projectPath": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\me-task-blazor.Client.csproj",
         "packagesPath": "C:\\Users\\lvarc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\",
+        "outputPath": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj": {
-                "projectPath": "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj"
+              "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj": {
+                "projectPath": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj"
               }
             }
           }
@@ -62,6 +62,10 @@
               "target": "Package",
               "version": "[3.2.1, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[3.2.0, )"
@@ -86,14 +90,14 @@
         }
       }
     },
-    "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj": {
+    "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj",
+        "projectUniqueName": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj",
         "projectName": "me-task-blazor.Shared",
-        "projectPath": "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj",
+        "projectPath": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\me-task-blazor.Shared.csproj",
         "packagesPath": "C:\\Users\\lvarc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lvarc\\source\\repos\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\obj\\",
+        "outputPath": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -125,6 +129,12 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
