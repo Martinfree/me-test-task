@@ -93,7 +93,7 @@ using me_task_blazor.Shared;
 #line 44 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\TaskCreateForm.razor"
        
     public TaskModel NewTask = new TaskModel();
-
+    public WorkerModel[] workers;
 
     public double counter = 2;
     public bool Answer = false;

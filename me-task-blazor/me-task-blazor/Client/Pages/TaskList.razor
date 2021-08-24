@@ -1,27 +1,63 @@
 ﻿@page "/task/"
+
+@using System.Text.Json
 @using me_task_blazor.Shared
+
 @inject HttpClient Http
 
 <h1>Task history</h1>
 
 <p>fetching data from the server.</p>
-@if (Tasks == null)
+
+@if (List == null)
 {
     <div class="spinner-border" role="status">
         <span class="sr-only">Loading...</span>
+
     </div>
 }
-else 
+else
 {
-<TaskModelForm />
+    @foreach (var item in List)
+    {
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Collapsible Group Item #1
+                </button>
+            </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                A job of @item.Images images is going to be edited by a crew of people:
+                
+                @foreach (var w in item.Workers)
+                {
+                    <p>@w.Name  speed 1 image per  @w.ImgPerMinute.ToString() minute</p>
+                }
+
+            </div>
+        </div>    
+    </div>
+
+    }
 }
 
 @code {
-    private TaskModel[] Tasks;
+    private IEnumerable<TaskModel> List;
+    //public HttpResponseMessage Response = null;
+    //public string List;
+    bool apiError = false;
+
 
     protected override async Task OnInitializedAsync()
     {
-        Tasks = await Http.GetFromJsonAsync<TaskModel[]>("TaskModel");
+
+        var response = await (Http.GetFromJsonAsync<IEnumerable<TaskModel>>("api/TaskModels"));
+        List = response.ToArray();
+
+
     }
 
-}
+}     

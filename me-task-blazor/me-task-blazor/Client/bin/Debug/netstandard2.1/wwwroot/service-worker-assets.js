@@ -65,7 +65,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-ZifzkGnDxdZkZMYL68Js+9nnwUINK6Sokva00upqUAk=",
+      "hash": "sha256-Nm9aEx8+eJXWzhNYdH+nPepEAp\/RghxU4BNPI7MhPec=",
       "url": "_framework\/_bin\/me-task-blazor.Client.dll"
     },
     {
@@ -89,7 +89,7 @@
       "url": "_framework\/_bin\/System.Memory.dll"
     },
     {
-      "hash": "sha256-HQeN+ZfHAERO+uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=",
+      "hash": "sha256-U7bRy05wcVRmBo6we7M8gTMCbJTfvEYUVP\/aO4W\/4ZA=",
       "url": "_framework\/_bin\/System.Text.Json.dll"
     },
     {
@@ -97,7 +97,7 @@
       "url": "_framework\/_bin\/System.Runtime.CompilerServices.Unsafe.dll"
     },
     {
-      "hash": "sha256-OBWh2or+2mU6elwqPfmL72FBZVKl2WzTJ4L\/IrKeXM4=",
+      "hash": "sha256-APJhF7Cne1YtXAEDjYtS+NC54Yt8Uy4W364YV6GfInE=",
       "url": "_framework\/_bin\/Microsoft.Bcl.AsyncInterfaces.dll"
     },
     {
@@ -185,7 +185,7 @@
       "url": "_framework\/_bin\/System.Numerics.Vectors.dll"
     },
     {
-      "hash": "sha256-Tqh1Da+iTRQJEZUGAsMNFuZ4hf1PMf13WApRZod+uw4=",
+      "hash": "sha256-RAOorQ519yzAjCf4\/2VseymZOcN57BcD0ziZ48H75NU=",
       "url": "_framework\/_bin\/System.Text.Encodings.Web.dll"
     },
     {
@@ -217,7 +217,7 @@
       "url": "_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll"
     },
     {
-      "hash": "sha256-t39ARWO5iNKOvr7pWKm66u+rb7IrPJNmnBwg4SIklmE=",
+      "hash": "sha256-rdOxNnaZcxJOXiWfq99LFW1+d1mI2wCNV2mwCMxMLJg=",
       "url": "_framework\/_bin\/me-task-blazor.Shared.dll"
     },
     {
@@ -325,11 +325,11 @@
       "url": "_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-BEAP5TRuFkmEdegK+vBHNk5i19qEIDVln0OwhQoYpsg=",
+      "hash": "sha256-NZe\/zzbdkfFNmV9Og9PSunEKHxmlLdsz2uS0f+K35OU=",
       "url": "_framework\/_bin\/me-task-blazor.Client.pdb"
     },
     {
-      "hash": "sha256-\/YKpQT3BP8nguoXRIKO+roOjLpxO8B9tQv+B\/4eKLfA=",
+      "hash": "sha256-zdagDvbZHJpbidacCc0OtW+btChesb59RhUt+72PIs8=",
       "url": "_framework\/_bin\/me-task-blazor.Shared.pdb"
     },
     {
@@ -349,9 +349,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-G02dYQGY\/nc+f64Ms1U7Wu5uwjhwhNKutu44Pd5NfKE=",
+      "hash": "sha256-qMEm33UcgnuMLA0TT3auQ\/O\/+SjbnBKqcouazRiCN2E=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "EVHCir5Y"
+  "version": "Jq2hOydV"
 };

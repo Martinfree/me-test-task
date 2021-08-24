@@ -76,7 +76,14 @@ using me_task_blazor.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Pages\TaskList.razor"
+#line 3 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Pages\TaskList.razor"
+using System.Text.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Pages\TaskList.razor"
 using me_task_blazor.Shared;
 
 #line default
@@ -91,13 +98,21 @@ using me_task_blazor.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 19 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Pages\TaskList.razor"
+#line 50 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Pages\TaskList.razor"
        
-    private TaskModel[] Tasks;
+    private IEnumerable<TaskModel> List;
+    //public HttpResponseMessage Response = null;
+    //public string List;
+    bool apiError = false;
+
 
     protected override async Task OnInitializedAsync()
     {
-        Tasks = await Http.GetFromJsonAsync<TaskModel[]>("TaskModel");
+
+        var response = await (Http.GetFromJsonAsync<IEnumerable<TaskModel>>("api/TaskModels"));
+        List = response.ToArray();
+
+
     }
 
 

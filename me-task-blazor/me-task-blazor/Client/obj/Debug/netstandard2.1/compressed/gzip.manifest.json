@@ -1,7 +1,7 @@
 {
   "FilesToCompress": [
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\ZifzkGnDxdZkZMYL68Js_9nnwUINK6Sokva00upqUAk=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\Nm9aEx8_eJXWzhNYdH_nPepEAp-RghxU4BNPI7MhPec=.hash",
       "Source": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\me-task-blazor.Client.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/me-task-blazor.Client.dll.gz"
     },
@@ -31,7 +31,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Memory.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\HQeN_ZfHAERO_uW0fP0J9J3WV1hQ3vUIOWbqGSYBPp8=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\U7bRy05wcVRmBo6we7M8gTMCbJTfvEYUVP-aO4W-4ZA=.hash",
       "Source": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Text.Json.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Json.dll.gz"
     },
@@ -41,7 +41,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Runtime.CompilerServices.Unsafe.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\OBWh2or_2mU6elwqPfmL72FBZVKl2WzTJ4L-IrKeXM4=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\APJhF7Cne1YtXAEDjYtS_NC54Yt8Uy4W364YV6GfInE=.hash",
       "Source": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\Microsoft.Bcl.AsyncInterfaces.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Bcl.AsyncInterfaces.dll.gz"
     },
@@ -151,7 +151,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Numerics.Vectors.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\Tqh1Da_iTRQJEZUGAsMNFuZ4hf1PMf13WApRZod_uw4=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\RAOorQ519yzAjCf4-2VseymZOcN57BcD0ziZ48H75NU=.hash",
       "Source": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\System.Text.Encodings.Web.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/System.Text.Encodings.Web.dll.gz"
     },
@@ -191,7 +191,7 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.Extensions.Logging.Abstractions.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\t39ARWO5iNKOvr7pWKm66u_rb7IrPJNmnBwg4SIklmE=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\rdOxNnaZcxJOXiWfq99LFW1_d1mI2wCNV2mwCMxMLJg=.hash",
       "Source": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\me-task-blazor.Shared.dll",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/me-task-blazor.Shared.dll.gz"
     },
@@ -326,12 +326,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/Microsoft.JSInterop.WebAssembly.dll.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\BEAP5TRuFkmEdegK_vBHNk5i19qEIDVln0OwhQoYpsg=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\NZe-zzbdkfFNmV9Og9PSunEKHxmlLdsz2uS0f_K35OU=.hash",
       "Source": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\me-task-blazor.Client.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/me-task-blazor.Client.pdb.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\-YKpQT3BP8nguoXRIKO_roOjLpxO8B9tQv_B-4eKLfA=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\zdagDvbZHJpbidacCc0OtW_btChesb59RhUt_72PIs8=.hash",
       "Source": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\Debug\\netstandard2.1\\blazor\\unlinked\\me-task-blazor.Shared.pdb",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/_bin\/me-task-blazor.Shared.pdb.gz"
     },
@@ -356,12 +356,12 @@
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.webassembly.js.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\G02dYQGY-nc_f64Ms1U7Wu5uwjhwhNKutu44Pd5NfKE=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\qMEm33UcgnuMLA0TT3auQ-O-_SjbnBKqcouazRiCN2E=.hash",
       "Source": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\Debug\\netstandard2.1\\blazor\\blazor.boot.json",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\_framework\/blazor.boot.json.gz"
     },
     {
-      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\yxxpmgz8m39lI9tc_-gzMtRtj8RRnirD-DebhxJWTE0=.hash",
+      "InputSource": "obj\\Debug\\netstandard2.1\\integrity\\t1Ulb8xH95XdkYGOvtXUEnEqZ_EV-4nhECjhgyu4o-k=.hash",
       "Source": "C:\\work\\me-test-task\\me-task-blazor\\me-task-blazor\\Client\\obj\\Debug\\netstandard2.1\\blazor\\service-worker-assets.js",
       "Target": "obj\\Debug\\netstandard2.1\\compressed\\service-worker-assets.js.gz"
     }

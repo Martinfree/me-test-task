@@ -13,5 +13,8 @@ namespace me_task_blazor.Shared
         public int Id { get; set; } //???
         public string Name { get; set; }
         public int ImgPerMinute { get; set; }
+
+        [Required]
+        public TaskModel TaskModel;
     }
 }

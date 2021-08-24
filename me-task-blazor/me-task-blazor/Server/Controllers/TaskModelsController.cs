@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using me_task_blazor.Server.Models;
 using me_task_blazor.Shared;
-
+using System.Net.Http;
 
 namespace me_task_blazor.Server.Controllers
 {
@@ -28,10 +29,17 @@ namespace me_task_blazor.Server.Controllers
             }
         }
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TaskModel>>> Get()
+        public async Task<IEnumerable<TaskModel>> Get()
         {
-            return await db.TaskModels.ToListAsync();
+            var player = await db.TaskModels
+                .Include(one => one.Workers)
+                .ToListAsync();
+
+            
+            return player;
         }
+        //return await db.TaskModels.ToListAsync();
+    
 
         // GET api/TaskModels/5
         [HttpGet("{id}")]
@@ -52,7 +60,11 @@ namespace me_task_blazor.Server.Controllers
                 return BadRequest();
             }
 
+            // Get relations and save to database with creating
+            foreach (var worker in TaskModel.Workers) db.WorkerModels.Add(worker);
             db.TaskModels.Add(TaskModel);
+            
+            
             await db.SaveChangesAsync();
             return Ok(TaskModel);
         }
