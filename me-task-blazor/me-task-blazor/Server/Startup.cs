@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using me_task_blazor.Server.Models;
+
 
 namespace me_task_blazor.Server
 {
@@ -22,7 +25,10 @@ namespace me_task_blazor.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            // добавляем контекст MobileContext в качестве сервиса в приложение
+            services.AddDbContext<DataContext>(options =>
+                options.UseSqlServer(connection));
             services.AddControllersWithViews();
             services.AddControllers();
             services.AddRazorPages();
