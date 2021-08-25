@@ -3,10 +3,10 @@
 
 Blazor app created for test task. For resolve all score in project used BlazorWebAssembly project with N-Tier architecture implementation.<br>
 
-![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3DChristofSenn.N-TierEntityFrameworkVS2015&psig=AOvVaw3rxlq9bZGDAA_w8JxQ3nAL&ust=1629909585683000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCKDl982EzfICFQAAAAAdAAAAABAI)
+![alt text](https://christofsenn.gallerycdn.vsassets.io/extensions/christofsenn/n-tierentityframeworkvs2015/1.9/1482142300425/96004/1/context.png)
 
 # me-task-blazor.Client
-Blazor.Client prodeces presentation layer of app architecture. Еhe main task of the Сlient is to render the data that he receives from the server. 
+Blazor.Client prodeces presentation layer of app architecture. Еhe main task of the Сlient is to render the data that he receives from the server.
 
 
 # me-task-blazor.Server
