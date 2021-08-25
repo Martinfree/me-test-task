@@ -31,12 +31,12 @@ namespace me_task_blazor.Server.Controllers
         [HttpGet]
         public async Task<IEnumerable<TaskModel>> Get()
         {
-            var player = await db.TaskModels
+            var response = await db.TaskModels
                 .Include(one => one.Workers)
                 .ToListAsync();
 
             
-            return player;
+            return response;
         }
         //return await db.TaskModels.ToListAsync();
     

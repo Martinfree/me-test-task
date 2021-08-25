@@ -20,13 +20,6 @@ using System.Net.Http;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\_Imports.razor"
-using System.Net.Http.Json;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 3 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
@@ -77,6 +70,13 @@ using me_task_blazor.Client.Shared;
 #nullable disable
 #nullable restore
 #line 1 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\TaskCreateForm.razor"
+using System.Net.Http.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\TaskCreateForm.razor"
 using me_task_blazor.Shared;
 
 #line default
@@ -90,37 +90,100 @@ using me_task_blazor.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\TaskCreateForm.razor"
+#line 80 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\TaskCreateForm.razor"
        
-    public TaskModel NewTask = new TaskModel();
-    public WorkerModel[] workers;
 
-    public double counter = 2;
-    public bool Answer = false;
+    public List<WorkerModel> workers = new List<WorkerModel>(){
+        new WorkerModel{
+            Name = "",
+            ImgPerMinute = 0
+    }};
+    public TaskModel NewTask = new TaskModel() {
+        Images = 0,
+        Workers = new List<WorkerModel>().ToArray(),
+        Res = ""
+    };
 
-    private void Get()
+    public bool Answer = false; //If button clicked
+    private int count = 1; // workers counter
+    private System.Net.HttpStatusCode Response;
+
+    /// <summary>
+    /// Initialize Answer section
+    /// </summary>
+    private void GetAnswer()
     {
-        Answer = !Answer;
-        
-}
+        //NewTask.Workers = new List<WorkerModel>().ToArray();
+        // add workers to task
+        var s = Enumerable.Range(0, workers.Count);
+        //NewTask.Workers.Clear();
 
-    private string Rows = "<tr>" +
-        "<th scope= \"row\"> 1 </th>" +
-        "<td><input @bind=\"NewTask\" type = \"text\" class=\"form-control\" id=\"name\"></td>" +
-        "<td><input type = \"number\" class=\"form-control\" id=\"speed\"></td></tr>";
+        NewTask.Workers = workers;
 
-    private void AddWorker()
+        var response = CreateTask();
+        Answer = true;
+        // It's global var with status code for print errors
+        //await ResponseCheck(response.Result);
+    }
+
+    /// <summary>
+    /// Call PostCreateTaskModels and return saved data to NewTask
+    /// </summary>
+    private async Task<System.Net.HttpStatusCode> CreateTask()
     {
-        Rows += "<tr>" +
-            "<th scope= \"row\">" + counter++.ToString() + "</th>" +
-            "<td><input @bind=\"NewTask.Name\" type = \"text\" class=\"form-control\" id=\"name\"></td>" +
-            "<td><input type = \"number\" class=\"form-control\" id=\"speed\"></td></tr>";
+
+        var response = await (Http.PostAsJsonAsync<TaskModel>("api/TaskModels", NewTask));
+        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            NewTask = await response.Content.ReadFromJsonAsync<TaskModel>();
+            return System.Net.HttpStatusCode.OK;
+        }
+        else {
+            return System.Net.HttpStatusCode.NoContent;
+        }
+    }
+
+    // What do when number of workers changed
+    private void onchange_n(ChangeEventArgs e)
+    {
+        count = 0;
+        // Parse value
+        if (Int32.TryParse(e.Value.ToString(), out int n))
+        {
+            count = n;
+            // Delete Workers
+            workers.Clear();
+        }
+        else
+        {
+            count = 0;
+        }
+
+        // ReInitialize workers
+        for (int i = 0; i < count; i++) workers.Add(new WorkerModel()
+        {
+
+            Name = "",
+            ImgPerMinute = 0
+        });
+        StateHasChanged();
+    }
+
+    public async Task ResponseCheck(System.Net.HttpStatusCode response)
+    {
+        if (response == System.Net.HttpStatusCode.OK) Answer = true;
+        else
+        {
+            Response = response;
+        }
+
     }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

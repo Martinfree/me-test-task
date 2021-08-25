@@ -1,9 +1,18 @@
-﻿@using me_task_blazor.Shared
+﻿@using System.Net.Http.Json
+@using me_task_blazor.Shared
+@inject HttpClient Http
 
 <h3>Try to find answer</h3>
 <td>
-    <input @bind="@NewTask.Images" type="text" class="form-control">
+    Number of Images to edit:
+    <input @bind="@NewTask.Images" type="number" min="1" max="100" class="form-control">
 </td>
+<td>
+Number of workers:
+<input value="@count" type="number" class="form-control" min="1" max="100" step="1" @oninput="onchange_n">
+<br>
+</td>
+
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -13,58 +22,147 @@
         </tr>
     </thead>
     <tbody>
+        @foreach (var i in Enumerable.Range(0, workers.Count))
+        {
+            <tr>
+                <th scope="row"> @i </th>
+                <td>
+                    <input value="@workers[@i].Name" placeholder="Person Name" @oninput="@((ChangeEventArgs e) => @workers[@i].Name = e.Value.ToString())" type="text" class="form-control" >
+                </td>
+                <td>
+                    <input value="@workers[@i].ImgPerMinute" min="1" max="100" step="1" @oninput="@((ChangeEventArgs e) => @workers[@i].ImgPerMinute = Convert.ToInt32(e.Value.ToString()))" type="number" class="form-control">
+                </td>
 
-        @((MarkupString)Rows)
+            </tr>
+        }
 
 
     </tbody>
 
 </table>
 
-<button type="button" class="btn btn-primary" @onclick="AddWorker">&#43; Add</button>
 <div>
-    <button type="button" class="btn btn-primary" @onclick="Get">Answer</button>
+    <button type="button" class="btn btn-primary" @onclick="GetAnswer">Answer</button>
 </div>
 
-<div>
-    <br>A job of @NewTask.Images images is going to be edited by a crew of people:<br>
+@if (Answer )
+{
+    <div>
+        <br>A job of @NewTask.Images images is going to be edited by a crew of people:<br>
+        Every person have speed property:
+        @foreach (var w in NewTask.Workers)
+        {
+            <p>@w.Name - @w.ImgPerMinute img/min </p><br>
+        }
+        Answer: @NewTask.Res <br>
+        1.How long will this job take in total ?<br>
+        -Total time
 
-    Every person have speed property v img/min(Worker list)<br>
-
-    Answer:<br>
-    1. How long will this job take in total?<br>
-    - Total time
-
-    2. How many images will be edited by every person?<br>
-    - Worker (name) edit (number of images)
-
-</div>
+        2.How many images will be edited by every person?<br>
+        @foreach (var w in NewTask.Workers)
+        {
+            <p>-Worker @w.Name edit(number of images)</p><br>
+        }
 
 
-@code {
-    public TaskModel NewTask = new TaskModel();
-    public WorkerModel[] workers;
+    </div>
+}
+else if (Answer && Response != System.Net.HttpStatusCode.OK)
+{
+    <div>
+        <br>Error:<br>
 
-    public double counter = 2;
-    public bool Answer = false;
+        StatusCode: @Response<br>
 
-    private void Get()
-    {
-        Answer = !Answer;
-        
+    </div>
 }
 
-    private string Rows = "<tr>" +
-        "<th scope= \"row\"> 1 </th>" +
-        "<td><input @bind=\"NewTask\" type = \"text\" class=\"form-control\" id=\"name\"></td>" +
-        "<td><input type = \"number\" class=\"form-control\" id=\"speed\"></td></tr>";
+@code {
 
-    private void AddWorker()
+    public List<WorkerModel> workers = new List<WorkerModel>(){
+        new WorkerModel{
+            Name = "",
+            ImgPerMinute = 0
+    }};
+    public TaskModel NewTask = new TaskModel() {
+        Images = 0,
+        Workers = new List<WorkerModel>().ToArray(),
+        Res = ""
+    };
+
+    public bool Answer = false; //If button clicked
+    private int count = 1; // workers counter
+    private System.Net.HttpStatusCode Response;
+
+    /// <summary>
+    /// Initialize Answer section
+    /// </summary>
+    private void GetAnswer()
     {
-        Rows += "<tr>" +
-            "<th scope= \"row\">" + counter++.ToString() + "</th>" +
-            "<td><input @bind=\"NewTask.Name\" type = \"text\" class=\"form-control\" id=\"name\"></td>" +
-            "<td><input type = \"number\" class=\"form-control\" id=\"speed\"></td></tr>";
+        //NewTask.Workers = new List<WorkerModel>().ToArray();
+        // add workers to task
+        var s = Enumerable.Range(0, workers.Count);
+        //NewTask.Workers.Clear();
+
+        NewTask.Workers = workers;
+
+        var response = CreateTask();
+        Answer = true;
+        // It's global var with status code for print errors
+        //await ResponseCheck(response.Result);
+    }
+
+    /// <summary>
+    /// Call PostCreateTaskModels and return saved data to NewTask
+    /// </summary>
+    private async Task<System.Net.HttpStatusCode> CreateTask()
+    {
+
+        var response = await (Http.PostAsJsonAsync<TaskModel>("api/TaskModels", NewTask));
+        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+        {
+            NewTask = await response.Content.ReadFromJsonAsync<TaskModel>();
+            return System.Net.HttpStatusCode.OK;
+        }
+        else {
+            return System.Net.HttpStatusCode.NoContent;
+        }
+    }
+
+    // What do when number of workers changed
+    private void onchange_n(ChangeEventArgs e)
+    {
+        count = 0;
+        // Parse value
+        if (Int32.TryParse(e.Value.ToString(), out int n))
+        {
+            count = n;
+            // Delete Workers
+            workers.Clear();
+        }
+        else
+        {
+            count = 0;
+        }
+
+        // ReInitialize workers
+        for (int i = 0; i < count; i++) workers.Add(new WorkerModel()
+        {
+
+            Name = "",
+            ImgPerMinute = 0
+        });
+        StateHasChanged();
+    }
+
+    public async Task ResponseCheck(System.Net.HttpStatusCode response)
+    {
+        if (response == System.Net.HttpStatusCode.OK) Answer = true;
+        else
+        {
+            Response = response;
+        }
+
     }
 
 }
