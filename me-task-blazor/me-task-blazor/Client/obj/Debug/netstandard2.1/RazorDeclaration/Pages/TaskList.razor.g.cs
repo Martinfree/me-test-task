@@ -98,12 +98,13 @@ using me_task_blazor.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Pages\TaskList.razor"
+#line 57 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Pages\TaskList.razor"
        
     private IEnumerable<TaskModel> List;
     //public HttpResponseMessage Response = null;
     //public string List;
     bool apiError = false;
+    int totalTime = 0;
 
     /// <summary>
     /// On load page call api to get data

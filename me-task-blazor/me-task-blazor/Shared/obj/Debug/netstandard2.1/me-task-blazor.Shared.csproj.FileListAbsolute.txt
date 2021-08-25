@@ -20,7 +20,6 @@ C:\Users\lvarc\source\repos\me-test-task\me-task-blazor\me-task-blazor\Shared\ob
 C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\bin\Debug\netstandard2.1\me-task-blazor.Shared.deps.json
 C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\bin\Debug\netstandard2.1\me-task-blazor.Shared.dll
 C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\bin\Debug\netstandard2.1\me-task-blazor.Shared.pdb
-C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2.1\me-task-blazor.Shared.csproj.AssemblyReference.cache
 C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2.1\me-task-blazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
 C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2.1\me-task-blazor.Shared.AssemblyInfoInputs.cache
 C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2.1\me-task-blazor.Shared.AssemblyInfo.cs

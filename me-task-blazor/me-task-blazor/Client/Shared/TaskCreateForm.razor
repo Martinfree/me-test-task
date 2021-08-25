@@ -7,11 +7,11 @@
     Number of Images to edit:
     <input @bind="@NewTask.Images" type="number" min="1" max="100" class="form-control">
 </td>
-<td>
+<br>
 Number of workers:
 <input value="@count" type="number" class="form-control" min="1" max="100" step="1" @oninput="onchange_n">
 <br>
-</td>
+
 
 <table class="table">
     <thead class="thead-dark">
@@ -27,7 +27,7 @@ Number of workers:
             <tr>
                 <th scope="row"> @i </th>
                 <td>
-                    <input value="@workers[@i].Name" placeholder="Person Name" @oninput="@((ChangeEventArgs e) => @workers[@i].Name = e.Value.ToString())" type="text" class="form-control" >
+                    <input value="@workers[@i].Name" placeholder="Person Name" @oninput="@((ChangeEventArgs e) => @workers[@i].Name = e.Value.ToString())" type="text" class="form-control">
                 </td>
                 <td>
                     <input value="@workers[@i].ImgPerMinute" min="1" max="100" step="1" @oninput="@((ChangeEventArgs e) => @workers[@i].ImgPerMinute = Convert.ToInt32(e.Value.ToString()))" type="number" class="form-control">
@@ -45,8 +45,9 @@ Number of workers:
     <button type="button" class="btn btn-primary" @onclick="GetAnswer">Answer</button>
 </div>
 
-@if (Answer )
+@if (Answer)
 {
+    @foreach (var model in NewTask.Res) totalTime = totalTime+Convert.ToInt32(model.Value.ElementAt(1));
     <div>
         <br>A job of @NewTask.Images images is going to be edited by a crew of people:<br>
         Every person have speed property:
@@ -54,14 +55,14 @@ Number of workers:
         {
             <p>@w.Name - @w.ImgPerMinute img/min </p><br>
         }
-        Answer: @NewTask.Res <br>
+        Answer:<br>
         1.How long will this job take in total ?<br>
-        -Total time
+        -Total time: @totalTime <br>
 
         2.How many images will be edited by every person?<br>
-        @foreach (var w in NewTask.Workers)
+        @foreach (var w in NewTask.Res)
         {
-            <p>-Worker @w.Name edit(number of images)</p><br>
+    <p>-Worker @w.Key edit @w.Value.ElementAt(0)</p><br>
         }
 
 
@@ -78,28 +79,27 @@ else if (Answer && Response != System.Net.HttpStatusCode.OK)
 }
 
 @code {
-
+    int totalTime = 0;
     public List<WorkerModel> workers = new List<WorkerModel>(){
         new WorkerModel{
             Name = "",
             ImgPerMinute = 0
     }};
-    public TaskModel NewTask = new TaskModel() {
+    public TaskModel NewTask = new TaskModel()
+    {
         Images = 0,
-        Workers = new List<WorkerModel>().ToArray(),
-        Res = ""
+        Workers = new List<WorkerModel>().ToArray()
     };
 
     public bool Answer = false; //If button clicked
     private int count = 1; // workers counter
     private System.Net.HttpStatusCode Response;
-
+    string TaskResult;
     /// <summary>
     /// Initialize Answer section
     /// </summary>
     private void GetAnswer()
     {
-        //NewTask.Workers = new List<WorkerModel>().ToArray();
         // add workers to task
         var s = Enumerable.Range(0, workers.Count);
         //NewTask.Workers.Clear();
@@ -108,8 +108,7 @@ else if (Answer && Response != System.Net.HttpStatusCode.OK)
 
         var response = CreateTask();
         Answer = true;
-        // It's global var with status code for print errors
-        //await ResponseCheck(response.Result);
+
     }
 
     /// <summary>
@@ -124,7 +123,8 @@ else if (Answer && Response != System.Net.HttpStatusCode.OK)
             NewTask = await response.Content.ReadFromJsonAsync<TaskModel>();
             return System.Net.HttpStatusCode.OK;
         }
-        else {
+        else
+        {
             return System.Net.HttpStatusCode.NoContent;
         }
     }
@@ -155,14 +155,6 @@ else if (Answer && Response != System.Net.HttpStatusCode.OK)
         StateHasChanged();
     }
 
-    public async Task ResponseCheck(System.Net.HttpStatusCode response)
-    {
-        if (response == System.Net.HttpStatusCode.OK) Answer = true;
-        else
-        {
-            Response = response;
-        }
 
-    }
 
 }

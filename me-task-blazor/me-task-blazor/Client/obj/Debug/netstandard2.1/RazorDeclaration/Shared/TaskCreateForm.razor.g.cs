@@ -90,30 +90,29 @@ using me_task_blazor.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 80 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\TaskCreateForm.razor"
+#line 81 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\TaskCreateForm.razor"
        
-
+    int totalTime = 0;
     public List<WorkerModel> workers = new List<WorkerModel>(){
         new WorkerModel{
             Name = "",
             ImgPerMinute = 0
     }};
-    public TaskModel NewTask = new TaskModel() {
+    public TaskModel NewTask = new TaskModel()
+    {
         Images = 0,
-        Workers = new List<WorkerModel>().ToArray(),
-        Res = ""
+        Workers = new List<WorkerModel>().ToArray()
     };
 
     public bool Answer = false; //If button clicked
     private int count = 1; // workers counter
     private System.Net.HttpStatusCode Response;
-
+    string TaskResult;
     /// <summary>
     /// Initialize Answer section
     /// </summary>
     private void GetAnswer()
     {
-        //NewTask.Workers = new List<WorkerModel>().ToArray();
         // add workers to task
         var s = Enumerable.Range(0, workers.Count);
         //NewTask.Workers.Clear();
@@ -122,8 +121,7 @@ using me_task_blazor.Shared;
 
         var response = CreateTask();
         Answer = true;
-        // It's global var with status code for print errors
-        //await ResponseCheck(response.Result);
+
     }
 
     /// <summary>
@@ -138,7 +136,8 @@ using me_task_blazor.Shared;
             NewTask = await response.Content.ReadFromJsonAsync<TaskModel>();
             return System.Net.HttpStatusCode.OK;
         }
-        else {
+        else
+        {
             return System.Net.HttpStatusCode.NoContent;
         }
     }
@@ -169,15 +168,7 @@ using me_task_blazor.Shared;
         StateHasChanged();
     }
 
-    public async Task ResponseCheck(System.Net.HttpStatusCode response)
-    {
-        if (response == System.Net.HttpStatusCode.OK) Answer = true;
-        else
-        {
-            Response = response;
-        }
 
-    }
 
 
 #line default

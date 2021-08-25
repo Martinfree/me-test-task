@@ -20,26 +20,36 @@ else
 {
     @foreach (var item in List)
     {
-    <div class="card">
-        <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Collapsible Group Item #1
-                </button>
-            </h5>
-        </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-                A job of @item.Images images is going to be edited by a crew of people:
-                
-                @foreach (var w in item.Workers)
-                {
-                    <p>@w.Name  speed 1 image per  @w.ImgPerMinute.ToString() minute</p>
-                }
-
+        @foreach (var model in item.Res) totalTime = totalTime + Convert.ToInt32(model.Value.ElementAt(1));
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Task @item.Id
+                    </button>
+                </h5>
             </div>
-        </div>    
-    </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <br>A job of @item.Images images is going to be edited by a crew of people:<br>
+                    Every person have speed property:
+                    @foreach (var w in item.Workers)
+                    {
+                        <p>@w.Name - @w.ImgPerMinute img/min </p><br>
+                    }
+                    Answer:<br>
+                    1.How long will this job take in total ?<br>
+                    -Total time: @totalTime <br>
+
+                    2.How many images will be edited by every person?<br>
+                    @foreach (var w in item.Res)
+                    {
+                        <p>-Worker @w.Key edit @w.Value.ElementAt(0)</p><br>
+                    }
+
+                </div>
+            </div>
+        </div>
 
     }
 }
@@ -49,6 +59,7 @@ else
     //public HttpResponseMessage Response = null;
     //public string List;
     bool apiError = false;
+    int totalTime = 0;
 
     /// <summary>
     /// On load page call api to get data
