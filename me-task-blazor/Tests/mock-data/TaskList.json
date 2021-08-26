@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "images": 1000,
+    "workers": [
+      {
+        "id": 0,
+        "name": "P1",
+        "imgPerMinute": 2
+      },
+      {
+        "id": 1,
+        "name": "P2",
+        "imgPerMinute": 3
+      },
+      {
+        "id": 2,
+        "name": "P3",
+        "imgPerMinute": 4
+      }
+    ],
+    "releaseDate": "2021-08-23T22:52:45.4078274+03:00",
+    "res": [
+      {
+        "key": "P1",
+        "value": [
+          "461",
+          "922"
+        ]
+      },
+      {
+        "key": "P2",
+        "value": [
+          "308",
+          "924"
+        ]
+      },
+      {
+        "key": "P3",
+        "value": [
+          "231",
+          "924"
+        ]
+      }
+    ]
+  }
+]

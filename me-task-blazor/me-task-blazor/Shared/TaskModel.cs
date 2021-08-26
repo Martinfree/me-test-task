@@ -28,7 +28,7 @@ namespace me_task_blazor.Shared
         private List<KeyValuePair<string, List<string>>> Calculate()
         {
             List<KeyValuePair<string, List<string>>> result = new List<KeyValuePair<string, List<string>>>();
-
+            if (Workers == null) return result;
             if (Images == 0) return result;
             if (Workers.Count < 2) return result;
             

@@ -26,3 +26,5 @@ C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2
 C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2.1\me-task-blazor.Shared.csproj.CoreCompileInputs.cache
 C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2.1\me-task-blazor.Shared.dll
 C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2.1\me-task-blazor.Shared.pdb
+C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2.1\me-task-blazor.Shared.Properties.Resources.resources
+C:\work\me-test-task\me-task-blazor\me-task-blazor\Shared\obj\Debug\netstandard2.1\me-task-blazor.Shared.csproj.GenerateResource.cache
