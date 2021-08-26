@@ -1,0 +1,218 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ME TASK BLAZOR API",
+    "description": "This is a sample api documentation to [blazor app](https://github.com/Martinfree/me-test-task)\n",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "lvarchenko99@gmail.com"
+    },
+    "version": "1.0.0-oas3"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/martinmannen/me-task-blazor/1.0.0"
+    },
+    {
+      "url": "http://virtserver.swaggerhub.com/martinmannen/me-task-blazor/1.0.0"
+    }
+  ],
+  "tags": [
+    {
+      "name": "TaskModel",
+      "description": "TaskModel api"
+    }
+  ],
+  "paths": {
+    "/api/TaskModels/": {
+      "get": {
+        "tags": [
+          "TaskModel"
+        ],
+        "summary": "Find TaskModel by id",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskModelArray"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TaskModel"
+        ],
+        "summary": "Create new TaskModel",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TaskModels/{Id}": {
+      "get": {
+        "tags": [
+          "TaskModel"
+        ],
+        "summary": "Find TaskModel by id",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "ID of model",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TaskModel": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "description": "Id in db",
+            "format": "int32"
+          },
+          "Images": {
+            "type": "integer",
+            "description": "Number of images",
+            "format": "int32"
+          },
+          "Workers": {
+            "$ref": "#/components/schemas/TaskModel_Workers"
+          },
+          "ReleaseDate": {
+            "type": "string",
+            "description": "Date when task created",
+            "format": "date-time",
+            "example": "2021-08-23T22:52:45.4078274+03:00"
+          },
+          "Res": {
+            "type": "array",
+            "description": "Result object",
+            "items": {
+              "$ref": "#/components/schemas/Res"
+            }
+          }
+        },
+        "xml": {
+          "name": "Order"
+        }
+      },
+      "TaskModelArray": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TaskModel"
+        }
+      },
+      "Workers": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "Name": {
+            "type": "string",
+            "example": "P1"
+          },
+          "ImgPerMinute": {
+            "type": "integer",
+            "format": "int32",
+            "example": 2
+          }
+        },
+        "description": "Collection of workers"
+      },
+      "Res": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Result"
+        }
+      },
+      "Result": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "example": "P1"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TaskModel_Workers": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "Name": {
+            "type": "string",
+            "example": "P1"
+          },
+          "ImgPerMinute": {
+            "type": "integer",
+            "format": "int32",
+            "example": 2
+          }
+        },
+        "description": "Collection of workers"
+      }
+    }
+  }
+}
