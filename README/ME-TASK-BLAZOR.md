@@ -21,7 +21,6 @@ Shared solution contains ~~models~~ classes that in blazor app represents descri
 This project have 2 models:
 
 - [TaskModel]()
-<details open><br/>
 ```cs
   public class TaskModel
       {
@@ -34,10 +33,8 @@ This project have 2 models:
         public List<KeyValuePair<string, List<string>>> Res { get => Calculate(); }
       }
 ```
-</details>
 
 - [WorkerModel]()
-<details open><br/>
 ```cs
 public class WorkerModel
 {
@@ -52,5 +49,9 @@ public class WorkerModel
 }
 ```
 
-</details>
+
+
 # Testing project
+
+For Testing uses separate from 2 others solution code [Tests](). For now tests contains
+dbContext logic and API validation. The api is represented as TaskModelController
