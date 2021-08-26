@@ -54,4 +54,4 @@ public class WorkerModel
 # Testing project
 
 For Testing uses separate from 2 others solution code [Tests](). For now tests contains
-dbContext logic and API validation. The api is represented as TaskModelController
+dbContext logic and API validation. The api is represented as TaskModelController.

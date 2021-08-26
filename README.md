@@ -26,9 +26,8 @@ A job of 1000 images is going to be edited by a crew of 3 people:
 
 
 # Requirement
-README for programs:
+README's:
 2. See [Blazor](README/ME-TASK-BLAZOR.md).
-3. See [Python script](None)
 4. See [Algorithms](README/ALGORITHMS.md)
 
 Focus on:
