@@ -14,7 +14,6 @@ namespace me_task_blazor.Shared
         [Key]
         public int Id { get; set; }
         public int Images { get; set; }
-        //OneToMany relation. Represent all workers that attented in task I DON'T KNOW WHY IT'S NOT WORKING
         public ICollection<WorkerModel> Workers { get; set; }
         
         [DataType(DataType.DateTime)]

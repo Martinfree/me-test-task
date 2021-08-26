@@ -14,3 +14,43 @@ With the Blazor Server hosting model, the app is executed on the server from wit
 In this project server use EntityFramework to produce dbContext. EntityFramework create connection with setup database and works like database middleware.
 
 All requests to models are implemented through api requests. Api have [swagger documentation](docs/api-doc.json).
+
+# me-task-blazor.Shared
+
+Shared solution contains ~~models~~ classes that in blazor app represents description of table values ​​in the database.
+This project have 2 models:
+
+- [TaskModel]()
+<details open><br/>
+```cs
+  public class TaskModel
+      {
+        public int Id { get; set; }
+        public int Images { get; set; }
+        public ICollection<WorkerModel> Workers { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime ReleaseDate { get; set; }
+        public List<KeyValuePair<string, List<string>>> Res { get => Calculate(); }
+      }
+```
+</details>
+
+- [WorkerModel]()
+<details open><br/>
+```cs
+public class WorkerModel
+{
+        [Required]
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int ImgPerMinute { get; set; }
+
+        [Required]
+        public TaskModel TaskModel;
+}
+```
+
+</details>
+# Testing project

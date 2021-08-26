@@ -10,7 +10,7 @@ namespace me_task_blazor.Shared
     {
         [Required]
         [Key]
-        public int Id { get; set; } //???
+        public int Id { get; set; } 
         public string Name { get; set; }
         public int ImgPerMinute { get; set; }
 
