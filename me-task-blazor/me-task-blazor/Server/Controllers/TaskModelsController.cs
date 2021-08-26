@@ -59,7 +59,6 @@ namespace me_task_blazor.Server.Controllers
             {
                 return BadRequest();
             }
-
             // Get relations and save to database with creating
             foreach (var worker in TaskModel.Workers) db.WorkerModels.Add(worker);
             db.TaskModels.Add(TaskModel);

@@ -83,7 +83,7 @@ using me_task_blazor.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\NavMenu.razor"
+#line 23 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

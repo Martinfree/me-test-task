@@ -1,5 +1,6 @@
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\CoverletSourceRootsMapping
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\testhost.dll
+C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\me-task-blazor.Client.StaticWebAssets.xml
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\me-task-blazor.Server.Views.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\me-task-blazor.Server.Views.pdb
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\me-task-blazor.Server.deps.json
@@ -159,6 +160,7 @@ C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\BlazorDebugProxy\zh-H
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\BlazorDebugProxy\zh-Hans\Microsoft.CodeAnalysis.resources.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\BlazorDebugProxy\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\BlazorDebugProxy\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\me-task-blazor.Server.StaticWebAssets.xml
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\me-task-blazor.Server.exe
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\testhost.exe
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -191,6 +193,7 @@ C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.VisualStudi
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
@@ -217,6 +220,7 @@ C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.VisualStudi
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\NuGet.Frameworks.dll
+C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\RichardSzalay.MockHttp.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\System.Composition.AttributedModel.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\System.Composition.Convention.dll
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\System.Composition.Hosting.dll
@@ -370,6 +374,8 @@ C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\me-task-blazor.Client
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\me-task-blazor.Server.pdb
 C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\me-task-blazor.Shared.pdb
 C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.csproj.AssemblyReference.cache
+C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.Properties.Resources.resources
+C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.csproj.GenerateResource.cache
 C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.GeneratedMSBuildEditorConfig.editorconfig
 C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.AssemblyInfoInputs.cache
 C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.AssemblyInfo.cs
@@ -379,7 +385,3 @@ C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.dll
 C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\ref\Tests.dll
 C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.pdb
 C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.genruntimeconfig.cache
-C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\RichardSzalay.MockHttp.dll
-C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.Properties.Resources.resources
-C:\work\me-test-task\me-task-blazor\Tests\obj\Debug\net5.0\Tests.csproj.GenerateResource.cache
-C:\work\me-test-task\me-task-blazor\Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll

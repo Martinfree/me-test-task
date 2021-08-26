@@ -90,9 +90,8 @@ using me_task_blazor.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 81 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\TaskCreateForm.razor"
+#line 83 "C:\work\me-test-task\me-task-blazor\me-task-blazor\Client\Shared\TaskCreateForm.razor"
        
-    int totalTime = 0;
     public List<WorkerModel> workers = new List<WorkerModel>(){
         new WorkerModel{
             Name = "",
@@ -113,13 +112,16 @@ using me_task_blazor.Shared;
     /// </summary>
     private void GetAnswer()
     {
+        TaskModel model = new TaskModel()
+        {
+            Images = NewTask.Images
+        };
         // add workers to task
         var s = Enumerable.Range(0, workers.Count);
         //NewTask.Workers.Clear();
+        model.Workers = workers;
 
-        NewTask.Workers = workers;
-
-        var response = CreateTask();
+        var response = CreateTask(model);
         Answer = true;
 
     }
@@ -127,10 +129,10 @@ using me_task_blazor.Shared;
     /// <summary>
     /// Call PostCreateTaskModels and return saved data to NewTask
     /// </summary>
-    private async Task<System.Net.HttpStatusCode> CreateTask()
+    private async Task<System.Net.HttpStatusCode> CreateTask(TaskModel model)
     {
 
-        var response = await (Http.PostAsJsonAsync<TaskModel>("api/TaskModels", NewTask));
+        var response = await (Http.PostAsJsonAsync<TaskModel>("api/TaskModels", model));
         if (response.StatusCode == System.Net.HttpStatusCode.OK)
         {
             NewTask = await response.Content.ReadFromJsonAsync<TaskModel>();

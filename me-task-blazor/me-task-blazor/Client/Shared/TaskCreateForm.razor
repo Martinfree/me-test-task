@@ -30,7 +30,7 @@ Number of workers:
                     <input value="@workers[@i].Name" placeholder="Person Name" @oninput="@((ChangeEventArgs e) => @workers[@i].Name = e.Value.ToString())" type="text" class="form-control">
                 </td>
                 <td>
-                    <input value="@workers[@i].ImgPerMinute" min="1" max="100" step="1" @oninput="@((ChangeEventArgs e) => @workers[@i].ImgPerMinute = Convert.ToInt32(e.Value.ToString()))" type="number" class="form-control">
+                    <input value="@workers[@i].ImgPerMinute"  type="number" class="form-control" min="1" max="100" step="1" @oninput="@((ChangeEventArgs e) => @workers[@i].ImgPerMinute = Convert.ToInt32(e.Value.ToString()))">
                 </td>
 
             </tr>
@@ -47,7 +47,9 @@ Number of workers:
 
 @if (Answer)
 {
-    @foreach (var model in NewTask.Res) totalTime = totalTime+Convert.ToInt32(model.Value.ElementAt(1));
+        var sum = 0;
+        @foreach (var model in NewTask.Res) sum = sum + Convert.ToInt32(model.Value.ElementAt(1));
+        
     <div>
         <br>A job of @NewTask.Images images is going to be edited by a crew of people:<br>
         Every person have speed property:
@@ -57,12 +59,12 @@ Number of workers:
         }
         Answer:<br>
         1.How long will this job take in total ?<br>
-        -Total time: @totalTime <br>
+        -Total time: @sum <br>
 
         2.How many images will be edited by every person?<br>
         @foreach (var w in NewTask.Res)
         {
-    <p>-Worker @w.Key edit @w.Value.ElementAt(0)</p><br>
+            <p>-Worker @w.Key edit @w.Value.ElementAt(0)</p><br>
         }
 
 
@@ -79,7 +81,6 @@ else if (Answer && Response != System.Net.HttpStatusCode.OK)
 }
 
 @code {
-    int totalTime = 0;
     public List<WorkerModel> workers = new List<WorkerModel>(){
         new WorkerModel{
             Name = "",
@@ -100,13 +101,16 @@ else if (Answer && Response != System.Net.HttpStatusCode.OK)
     /// </summary>
     private void GetAnswer()
     {
+        TaskModel model = new TaskModel()
+        {
+            Images = NewTask.Images
+        };
         // add workers to task
         var s = Enumerable.Range(0, workers.Count);
         //NewTask.Workers.Clear();
+        model.Workers = workers;
 
-        NewTask.Workers = workers;
-
-        var response = CreateTask();
+        var response = CreateTask(model);
         Answer = true;
 
     }
@@ -114,10 +118,10 @@ else if (Answer && Response != System.Net.HttpStatusCode.OK)
     /// <summary>
     /// Call PostCreateTaskModels and return saved data to NewTask
     /// </summary>
-    private async Task<System.Net.HttpStatusCode> CreateTask()
+    private async Task<System.Net.HttpStatusCode> CreateTask(TaskModel model)
     {
 
-        var response = await (Http.PostAsJsonAsync<TaskModel>("api/TaskModels", NewTask));
+        var response = await (Http.PostAsJsonAsync<TaskModel>("api/TaskModels", model));
         if (response.StatusCode == System.Net.HttpStatusCode.OK)
         {
             NewTask = await response.Content.ReadFromJsonAsync<TaskModel>();
