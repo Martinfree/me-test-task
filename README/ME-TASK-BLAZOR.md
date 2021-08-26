@@ -1,5 +1,5 @@
 # Blazor App
-[#Code](me-task-blazor/)
+[#Code](../me-task-blazor/me-task-blazor/)
 
 Blazor app created for test task. For resolve all score in project used BlazorWebAssembly project with N-Tier architecture implementation.<br>
 
@@ -13,14 +13,14 @@ Blazor.Client prodeces presentation layer of app architecture. Еhe main task of
 With the Blazor Server hosting model, the app is executed on the server from within an ASP.NET Core app.
 In this project server use EntityFramework to produce dbContext. EntityFramework create connection with setup database and works like database middleware.
 
-All requests to models are implemented through api requests. Api have [swagger documentation](docs/api-doc.json).
+All requests to models are implemented through api requests. Api have [swagger documentation](../docs/api-doc.json).
 
 # me-task-blazor.Shared
 
 Shared solution contains ~~models~~ classes that in blazor app represents description of table values ​​in the database.
 This project have 2 models:
 
-- [TaskModel]()
+- [TaskModel](../me-task-blazor/me-task-blazor/Shared/TaskModel.cs)
 ```cs
   public class TaskModel
       {
@@ -34,7 +34,7 @@ This project have 2 models:
       }
 ```
 
-- [WorkerModel]()
+- [WorkerModel](../me-task-blazor/me-task-blazor/Shared/WorkerModel.cs)
 ```cs
 public class WorkerModel
 {
@@ -53,5 +53,5 @@ public class WorkerModel
 
 # Testing project
 
-For Testing uses separate from 2 others solution code [Tests](). For now tests contains
+For Testing uses separate from 2 others solution code [Tests](../me-task-blazor/Tests). For now tests contains
 dbContext logic and API validation. The api is represented as TaskModelController.
