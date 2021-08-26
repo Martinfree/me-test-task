@@ -20,19 +20,20 @@ A job of 1000 images is going to be edited by a crew of 3 people:
 
 •  Correct answer and explain the necessary steps
 
-•  Working code[]()
+•  Working code
 
 •  It should work for any situation (amount of images, amount of people, individual speed)
 
-
-# Requirement
-README's:
-2. See [Blazor](README/ME-TASK-BLAZOR.md).
-4. See [Algorithms](README/ALGORITHMS.md)
-
-Focus on:
+#Focus on:
 
 1. OOP implementation;
 2. N-tier architecture implementation;
 3. Unit testing implementation;
-4. General programing rules and standards usage[]().              
+4. General programing rules and standards usage.              
+
+
+
+# Requirements
+1. See [Blazor](README/ME-TASK-BLAZOR.md).
+2. See [Algorithms](README/ALGORITHMS.md)
+3. See [Python script](python-answer-script/check-script.py)
